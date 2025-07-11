@@ -16,6 +16,6 @@ $(TARGET): $(SOURCE)
 	$(CXX) $(CXXFLAGS) $(SOURCE) -o $(TARGET)
 
 clean:
-	$(RM) $(BUILD_DIR)
+	$(RM) $(TARGET)
 
 .PHONY: all clean
