@@ -124,19 +124,21 @@ Solver::Solver(short y, short x, long seedCtrl) {
 }
 
 void Solver::setStartPoint(short sRow, short sCol) {
+  system("clear||cls");
   startCell.Row = (sRow * 2) + 1;
   startCell.Col = (sCol * 2) + 1;
   updateMaze();
 }
 
 void Solver::setEndPoint(short sRow, short sCol) {
+  system("clear||cls");
   endCell.Row = (sRow * 2) + 1;
   endCell.Col = (sCol * 2) + 1;
   updateMaze();
 }
 
 void Solver::updateMaze() {
-  system("clear||cls");
+  cout << "\033[1;1H"; // move cursor to the top-left corner
 
   for (short i = 0; i < mazeSize.Row; i++) {
     for (short j = 0; j < mazeSize.Col; j++) {
@@ -282,6 +284,7 @@ void Solver_Backtracking::solveMaze() {
     delete availableWalls;
     step++;
   } while (currentCell.Row != endCell.Row || currentCell.Col != endCell.Col);
+  system("clear||cls");
   currentCell = {-1, -1};
   updateMaze();
   cout << endl
@@ -354,6 +357,7 @@ void Solver_AStar::solveMaze() {
     step++;
   } while (currentCell.Row != endCell.Row || currentCell.Col != endCell.Col);
   currentCell = {-1, -1};
+  system("clear||cls");
   updateMaze();
   cout << endl
        << "Algorithm : " << yellow << "A* [ A-STAR ]" << def;

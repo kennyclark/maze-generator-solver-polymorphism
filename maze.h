@@ -138,7 +138,7 @@ void Maze::moveTo(short x) {
 }
 
 void Maze::updateMaze() {
-  system("clear||cls");
+  cout << "\033[1;1H"; // move cursor to the top-left corner
   for (short i = 0; i < mazeSize.Row; i++) {
     for (short j = 0; j < mazeSize.Col; j++) {
       if (i == currentCell.Row && j == currentCell.Col) {
@@ -189,7 +189,7 @@ void Maze::mazeGenerate(bool animate, long seedNum) {
       currentCell = trail.top();
     }
     if (animate == true) {
-      usleep(20000);
+      usleep(3000);
       updateMaze();
     }
     cout << endl << "Status : " << green << "GENERATING..." << def << endl;
