@@ -21,3 +21,16 @@ Clean.
 ```sh
 $ make clean
 ```
+
+## SCREENSHOTS:
+Generated maze.
+
+![generated maze](screenshots/generated-maze.png)
+
+Using Backtracking Algorithm.
+
+![solved using backtracking algorithm](screenshots/back-tracking-algorithm.png)
+
+Using A-Star Algorithm.
+
+![solved using a-star algorithm](screenshots/a-start-algorithm.png)
